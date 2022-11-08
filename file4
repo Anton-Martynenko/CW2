@@ -1,0 +1,13 @@
+function bmi(weight, height) {
+  let result = "";
+  if ((weight / (height * height)) <= 18.5) {
+    result = "Underweight";
+  } else if ((weight / (height * height)) <= 25) {
+    result = "Normal";
+  } else if ((weight / (height * height)) <= 30) {
+    result = "Overweight";
+  } else if ((weight / (height * height)) > 30) {
+    result = "Obese";
+  }
+  return result;
+}
