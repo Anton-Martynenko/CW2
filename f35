@@ -1,0 +1,7 @@
+function encode(input) {
+	return input.replace(/(.)\1*/g, (match, p1) => match.length + p1);
+}
+
+function decode(input) {
+  return input.replace(/(\d+)(.)+?/g, (_, p1, p2) => p2.repeat(p1));
+}
