@@ -1,0 +1,10 @@
+var getNum = function(n) {
+    let count=0
+    n.toString().split``.map(v=>{
+    v==='0'?count++:1;
+    v==='6'?count++:1;
+    v==='8'?count+=2:1;
+    v==='9'?count++:1;
+    })
+    return count 
+};
