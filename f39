@@ -1,0 +1,3 @@
+function getNum(n) {
+  return n.toString().split('').map(v => '1000001021'[+v]).reduce((s, v) => s + +v, 0);
+};
