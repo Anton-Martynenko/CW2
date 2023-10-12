@@ -1,0 +1,15 @@
+function additionWithoutCarrying(a,b) {
+  a = String(a);
+  b = String(b);
+  var d = a.length > b.length ? a : b;
+  var e = a.length > b.length ? b : a;
+
+  e = ("00000" + e)
+    .slice(-d.length)
+    .split("")
+    .map(Number);
+  d = d.split("").map(Number);
+
+  var c = d.map((el, i) => (el + e[i]) % 10);
+  return Number(c.join(""));
+}
