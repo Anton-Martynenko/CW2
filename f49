@@ -1,0 +1,39 @@
+function palindrome(num) { 
+  if(typeof num == 'string' || num < 0){
+      return "Not valid"
+  }    
+    
+    if(num <= 10){
+      return 11
+    }    
+    
+    function checkPalindrome(number){
+      let arr=[...number.toString()]
+      return arr.every((char,index)=>char == arr[arr.length-index-1])
+    }    
+    
+    if(checkPalindrome(num)){
+      return num
+    }    
+    
+    let numup=num+1
+    let numdown=num-1
+    let palindromefound=false;
+    
+    while(!palindromefound){
+  
+      if(checkPalindrome(numup)){
+        palindromefound=true
+        return numup
+      }else{
+        numup++
+      }
+  
+      if(checkPalindrome(numdown)){
+        palindromefound=true
+        return numdown
+      }else{
+        numdown--
+      }
+    }
+}
