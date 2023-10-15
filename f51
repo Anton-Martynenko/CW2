@@ -1,0 +1,20 @@
+function doMath(string) {
+    let p = string.split(' ')
+           .map((a, b) => ({b: b, n: +a.replace(/[a-z]/gi, ''), c: a.replace(/\d/g, '').charCodeAt(0)}))
+           .sort((x, y) => x.c-y.c || x.i-y.i)
+           .map(a => a.n);
+  
+   const computations = [
+    (subtotal, num) => subtotal + num,
+    (subtotal, num) => subtotal - num,
+    (subtotal, num) => subtotal * num,
+    (subtotal, num) => subtotal / num,
+  ];  
+  
+  let subtotal = p.shift();
+  const l = p.forEach((num, i) => {
+    subtotal = computations[i % 4](subtotal, num);
+  });
+  
+  return Math.round(subtotal)
+}
