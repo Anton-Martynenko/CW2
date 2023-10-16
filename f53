@@ -1,0 +1,5 @@
+function sortAnimal(animals) {
+  return animals 
+    ? [...animals].sort((a, b) => a.numberOfLegs - b.numberOfLegs || (a.name < b.name ? -1 : 1))
+    : null;
+}
