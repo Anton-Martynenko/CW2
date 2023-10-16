@@ -1,0 +1,4 @@
+function sortAnimal(animals) {
+  let animal = [...animals]
+  return animal?animal.sort((a,b)=>a.numberOfLegs-b.numberOfLegs||a.name.localeCompare(b.name)):null;
+}
