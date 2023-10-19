@@ -1,0 +1,4 @@
+function common(a,b,c){
+  [a,b,c] = [a,b,c].map(e => e.reduce((s,n) => ((s[n] ? s[n]=s[n]+1 : s[n]=1), s ) ,{}));
+  return Object.keys(a).reduce((s,i) => s + Math.min(a[i]||0,b[i]||0,c[i]||0)*i, 0);
+}
