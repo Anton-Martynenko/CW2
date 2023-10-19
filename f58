@@ -1,0 +1,5 @@
+function common(a,b,c){
+  const [mA, mB, mC] = [a,b,c].map(arr => arr.reduce((a,c) => (a[c] = ++a[c] || 1, a), {}))
+
+  return [...(new Set(a))].reduce((a,c) => mA[c] && mB[c] && mC[c] ? a + c * Math.min(mA[c], mB[c], mC[c]) : a, 0)
+}
