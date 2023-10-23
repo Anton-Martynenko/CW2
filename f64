@@ -1,0 +1,12 @@
+function arrange(strng) {
+
+  let t = strng.split(' '), i = -1
+  const compare = i => t[i+i%2].length > t[i+1-i%2].length
+  
+  while (++i < t.length-1) {
+    if (compare(i))
+      [t[i],t[i+1]] = [t[i+1],t[i]]
+  }
+  
+  return t.map((s,i) => s[`to${i%2?'Upper':'Lower'}Case`]()).join(' ')
+}
