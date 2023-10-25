@@ -1,0 +1,8 @@
+function palindrome(num) { 
+  if(typeof num!='number'||num<0) return "Not valid"
+  for(var rs=0,s=num+"",i=0.5;i<s.length;i+=.5) {
+    var l=Math.floor(i-.5),r=Math.ceil(i+.5)
+    while(l>=0&&r<s.length&&s[l--]==s[r++]) rs++
+  }
+  return rs;
+}
