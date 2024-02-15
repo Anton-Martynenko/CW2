@@ -1,0 +1,19 @@
+function getMissingIngredients(recipe, added) {
+  let max = 0;
+  let result = {};
+  for (let item in recipe)
+  {
+    if (item in added)
+      max = Math.max(Math.ceil(added[item] / recipe[item]), max);
+  }
+  if (max === 0)
+    return recipe;
+  for (let item in recipe)
+  {
+    if (!(item in added))
+      result[item] = max * recipe[item];
+    else if (added[item] < max * recipe[item])
+      result[item] = max * recipe[item] - added[item];
+  }
+  return result;
+}
