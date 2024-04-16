@@ -1,0 +1,3 @@
+function parityBit(binary) {
+  return binary.replace(/\b0*1(0*10*1)*0*\b/g, 'error').replace(/\d{8}/g, e => e.slice(0, 7));
+}
