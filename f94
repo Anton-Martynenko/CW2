@@ -1,0 +1,14 @@
+function service(score){
+   let s = score.split`:`;
+   let sc = s[0] * 1 + s[1] * 1;
+   let first = true;
+    while(sc > 40){
+     sc-=2
+     first =! first
+   }
+   while(sc > 4){
+     sc-=5
+     first =! first
+   }
+   return first ? 'first' : 'second';
+}
