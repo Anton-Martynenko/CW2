@@ -1,0 +1,4 @@
+function transpose(matrix) {
+    return matrix[0].map((_, c) => 
+        matrix.map((__, r) => matrix[r][c]));
+}
