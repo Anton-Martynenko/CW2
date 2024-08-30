@@ -1,0 +1,6 @@
+function ordinal(number, brief) {
+  let n = ['th','st','nd','rd'];
+  let m = number % 100;
+  let k = ( n[( m - 20 ) % 10] || n[m] || n[0] );
+  return (brief && k[1] == 'd') ? 'd' : k;
+}
